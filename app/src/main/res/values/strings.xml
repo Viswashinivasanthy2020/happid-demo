@@ -1,0 +1,8 @@
+<resources>
+    <string name="app_name">Happid_demo</string>
+    <string name="message"><![CDATA[On-Time Departures. Pay just for your seat. No REfusal from our end. Spacoius & Comfortable Seating. Female passangers safetystandards. Onboard Refreshments. Cab Tracking throungh Maps.]]></string>
+    <string name="best_markitplac">Best Markitplac</string>
+    <string name="happid">Happid</string>
+    <string name="get_started">Get Started</string>
+    <string name="help_message">Your Confirmation Code is Below - Enter It And We\'ll Help you Get Signed In</string>
+</resources>

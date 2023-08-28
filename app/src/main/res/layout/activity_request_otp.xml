@@ -1,0 +1,178 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    tools:ignore="NamespaceTypo">
+    <data>
+        <variable name ="Request"
+            type="com.demo.happid_demo.viewmodel.RequestViewModel"/>
+    </data>
+
+<androidx.constraintlayout.widget.ConstraintLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".view.RequestOtp">
+
+
+    <com.google.android.material.appbar.AppBarLayout
+        android:id="@+id/appBarLayout"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        tools:ignore="MissingConstraints">
+
+        <com.google.android.material.appbar.MaterialToolbar
+            android:id="@+id/topAppBar"
+            style="@style/Widget.MaterialComponents.Toolbar.Surface"
+            android:layout_width="match_parent"
+            android:layout_height="?attr/actionBarSize"
+            app:navigationIcon="@drawable/ic_back"
+            android:background="#F8F4EA"
+            app:title="" />
+    </com.google.android.material.appbar.AppBarLayout>
+    <ScrollView
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
+        android:scrollbars="none"
+
+        app:layout_constraintTop_toBottomOf="@+id/appBarLayout"
+        tools:ignore="MissingConstraints">
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:orientation="vertical"
+        >
+    <LinearLayout
+        android:id="@+id/linearLayout"
+        android:layout_width="409dp"
+        android:layout_height="301dp"
+        android:background="#F8F5EC"
+        android:gravity="center"
+        android:orientation="vertical"
+        app:layout_constraintTop_toBottomOf="@+id/appBarLayout"
+        tools:layout_editor_absoluteX="0dp"
+        tools:ignore="MissingConstraints">
+
+        <TextView
+            android:id="@+id/textView"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:textSize="35sp"
+            android:maxLines="2"
+            android:layout_margin="20dp"
+            android:textColor="@color/black"
+            android:fontFamily="@font/montserrat"
+            android:text="Enter Your Mobile Number" />
+
+        <TextView
+            android:id="@+id/textView2"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:textSize="16sp"
+            android:maxLines="2"
+            android:layout_margin="20dp"
+            android:fontFamily="@font/montserrat"
+            android:text="Hello, Welcome Back to Our Account" />
+    </LinearLayout>
+    <LinearLayout
+        android:id="@+id/linearLayout1"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:gravity="center"
+        android:orientation="horizontal"
+        app:layout_constraintTop_toBottomOf="@+id/linearLayout"
+        tools:layout_editor_absoluteX="0dp"
+        tools:ignore="MissingConstraints">
+    <com.hbb20.CountryCodePicker
+        android:id="@+id/country_code"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        app:ccp_showFlag="true"
+        android:background="@drawable/shape"
+        android:layout_margin="20dp"
+        app:ccp_textSize="16sp"
+        android:fontFamily="@font/montserrat"
+        app:layout_constraintTop_toBottomOf="@+id/linearLayout"
+        tools:ignore="MissingConstraints">
+    </com.hbb20.CountryCodePicker>
+
+        <EditText
+            android:id="@+id/mobileNumber"
+            android:layout_width="wrap_content"
+            android:layout_height="50dp"
+            android:layout_margin="20dp"
+            android:background="@drawable/shape"
+            android:ems="10"
+            android:ellipsize="end"
+            android:maxLines="1"
+            android:maxLength="10"
+            android:inputType="number"
+            android:textSize="16sp"
+            android:letterSpacing="0.20"
+            android:padding="5dp"
+            android:text="@={Request.mobilenumber}"
+            android:fontFamily="@font/montserrat"
+            tools:layout_editor_absoluteX="87dp" />
+    </LinearLayout>
+    <com.google.android.material.button.MaterialButton
+        android:id="@+id/requestotp"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_margin="24dp"
+        android:padding="22dp"
+        android:layout_gravity="center"
+        android:text="Request OTP"
+        android:fontFamily="@font/montserrat"
+        android:onClick="@{(v)->Request.onClick(v)}"
+        app:layout_constraintTop_toBottomOf="@+id/linearLayout1" />
+    <LinearLayout
+        android:id="@+id/linearLayout3"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:gravity="center"
+        app:layout_constraintTop_toBottomOf="@+id/requestotp"
+        android:layout_marginTop="30dp">
+
+        <View
+            android:layout_width="0dp"
+            android:layout_height="1dp"
+            android:background="@color/black"
+            android:layout_weight="3"/>
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="LogIn with"
+            android:layout_weight="3"
+            android:textSize="16sp"
+            android:textStyle="bold"
+            android:fontFamily="@font/montserrat"
+            android:textAlignment="center"/>
+
+        <View
+            android:layout_width="0dp"
+            android:layout_height="1dp"
+            android:background="@color/black"
+            android:layout_weight="3"/>
+
+    </LinearLayout>
+
+    <TextView
+        android:id="@+id/spantext1"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_weight="3"
+        android:gravity="center"
+        android:layout_margin="20dp"
+        android:layout_marginTop="20dp"
+        android:text="By Creating Passcode You Agree With Our Terms  Condition And Privscy Policy"
+        android:textAlignment="center"
+        android:textSize="12sp"
+        android:textStyle="bold"
+        android:fontFamily="@font/montserrat"
+        app:layout_constraintTop_toBottomOf="@+id/linearLayout3"
+        tools:ignore="MissingConstraints" />
+    </LinearLayout>
+    </ScrollView>
+</androidx.constraintlayout.widget.ConstraintLayout>
+</layout>
